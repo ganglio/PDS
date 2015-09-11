@@ -1,0 +1,25 @@
+{
+    "name": "ganglio/bloom",
+    "type": "library",
+    "description": "A Bloom filter implementation, some hash functions and an HyperLogLog cardinality counter",
+    "keywords": ["bloom", "filter", "bloom filter", "hyperloglog", "hyper log log", "hashes", "unique", "cardinalities", "cardinality"],
+    "homepage": "http://www.github.com/ganglio/Bloom",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Roberto Torella",
+            "email": "roberto.torella@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "Bloom": "src"
+        },
+        "classmap" : [
+            "src"
+        ]
+    },
+    "require": {
+        "php": ">=5.4.0"
+    }
+}
