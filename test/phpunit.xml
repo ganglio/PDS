@@ -1,0 +1,32 @@
+<phpunit bootstrap="./bootstrap.php"
+		 colors="true"
+		 convertErrorsToExceptions="true"
+		 convertNoticesToExceptions="false"
+		 convertWarningsToExceptions="true"
+		 stopOnFailure="false"
+		 syntaxCheck="true">
+
+	<testsuites>
+		<testsuite name="PDS testing Suite - Hashing Functions">
+			<directory>src/Hash</directory>
+		</testsuite>
+
+		<testsuite name="PDS testing Suite - HyperLogLog Functions">
+			<directory>src/HyperLogLog</directory>
+		</testsuite>
+	</testsuites>
+
+	<filter>
+		<blacklist>
+			<directory suffix=".php">../</directory>
+		</blacklist>
+		<whitelist>
+			<directory suffix=".php">../src/Hash</directory>
+			<directory suffix=".php">../src/Bloom</directory>
+			<directory suffix=".php">../src/HyperLogLog</directory>
+			<exclude>
+				<file>./bootstrap.php</file>
+			</exclude>
+		</whitelist>
+	</filter>
+</phpunit>

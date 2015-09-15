@@ -1,8 +1,8 @@
 {
-    "name": "ganglio/bloom",
+    "name": "ganglio/pds",
     "type": "library",
-    "description": "A Bloom filter implementation, some hash functions and an HyperLogLog cardinality counter",
-    "keywords": ["bloom", "filter", "bloom filter", "hyperloglog", "hyper log log", "hashes", "unique", "cardinalities", "cardinality"],
+    "description": "Probabilistic Data Structures to efficiently analyze and mine big datasets",
+    "keywords": ["probabilistic", "data structures", "bloom", "filter", "bloom filter", "hyperloglog", "hyper log log", "hashes", "unique", "cardinalities", "cardinality"],
     "homepage": "http://www.github.com/ganglio/Bloom",
     "license": "MIT",
     "authors": [
@@ -13,7 +13,9 @@
     ],
     "autoload": {
         "psr-0": {
-            "Bloom": "src"
+            "ganglio": "src",
+            "PDSTests": "test/src",
+            "Benchmarks": "benchmarks/src"
         },
         "classmap" : [
             "src"
