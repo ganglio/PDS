@@ -11,8 +11,12 @@
 			<directory>src/Hash</directory>
 		</testsuite>
 
-		<testsuite name="PDS testing Suite - HyperLogLog Functions">
+		<testsuite name="PDS testing Suite - HyperLogLog Cardinality Estimator">
 			<directory>src/HyperLogLog</directory>
+		</testsuite>
+
+		<testsuite name="PDS testing Suite - Exact Cardinality Estimator">
+			<directory>src/Exact</directory>
 		</testsuite>
 	</testsuites>
 

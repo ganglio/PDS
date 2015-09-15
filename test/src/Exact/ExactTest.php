@@ -2,12 +2,12 @@
 
 namespace PDSTest;
 
-use ganglio\PDS\Estimators\HyperLogLog;
+use ganglio\PDS\Estimators\Exact;
 
-class HyperLogLogTest extends \PHPUnit_Framework_TestCase {
+class ExactTest extends \PHPUnit_Framework_TestCase {
 
 	protected function setUp() {
-		$this->estimator = new HyperLogLog();
+		$this->estimator = new Exact();
 	}
 
 	protected function tearDown() {
@@ -25,11 +25,10 @@ class HyperLogLogTest extends \PHPUnit_Framework_TestCase {
 			$this->estimator->add("first".$i);
 
 		$counted = $this->estimator->count();
-		$error = 100*abs($num_keys-$counted)/$num_keys;
 
-		$this->assertLessThan(
-			1,
-			$error
+		$this->assertEquals(
+			$num_keys,
+			$counted
 		);
 	}
 }
