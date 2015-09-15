@@ -18,7 +18,9 @@
             "Benchmarks": "benchmarks/src"
         },
         "classmap" : [
-            "src"
+            "src",
+            "test/src",
+            "benchmarks/src"
         ]
     },
     "require": {

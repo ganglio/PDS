@@ -2,10 +2,12 @@
 
 namespace PDSTest;
 
+use ganglio\PDS\HyperLogLog\HyperLogLog;
+
 class HyperLogLogTest extends \PHPUnit_Framework_TestCase {
 
 	protected function setUp() {
-		$this->hll = new \ganglio\PDS\HyperLogLog\HyperLogLog();
+		$this->hll = new HyperLogLog();
 	}
 
 	protected function tearDown() {
