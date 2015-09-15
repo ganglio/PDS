@@ -3,7 +3,7 @@
     "type": "library",
     "description": "Probabilistic Data Structures to efficiently analyze and mine big datasets",
     "keywords": ["probabilistic", "data structures", "bloom", "filter", "bloom filter", "hyperloglog", "hyper log log", "hashes", "unique", "cardinalities", "cardinality"],
-    "homepage": "http://www.github.com/ganglio/Bloom",
+    "homepage": "http://www.github.com/ganglio/PDS",
     "license": "MIT",
     "authors": [
         {
