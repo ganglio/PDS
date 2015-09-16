@@ -6,7 +6,7 @@ php:
 before_script:
   - composer self-update
   - composer install
-  - test/phpunit --self-update
+  - test/phpunit.phar --self-update
 
 
 script:
