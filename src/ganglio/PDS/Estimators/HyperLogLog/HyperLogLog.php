@@ -14,7 +14,7 @@ class HyperLogLog implements Estimator {
 	private $alpha;
 	private $isEmpty = TRUE;
 
-	private function hash($key) {
+	private static function hash($key) {
 		return crc32(md5($key));
 	}
 
