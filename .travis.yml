@@ -3,10 +3,6 @@ php:
   - 5.4
   - 5.5
 
-branches:
-  only:
-    - /^(?i:v).*$/
-
 before_script:
   - composer self-update
   - composer install
