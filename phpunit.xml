@@ -18,6 +18,10 @@
 		<testsuite name="PDS testing Suite - Exact Cardinality Estimator">
 			<directory>./test/src/Exact</directory>
 		</testsuite>
+
+		<testsuite name="PDS testing Suite - Storage Structures">
+			<directory>./test/src/Storage</directory>
+		</testsuite>
 	</testsuites>
 
 	<filter>

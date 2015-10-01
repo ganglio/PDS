@@ -1,7 +1,6 @@
 <?php
 
-namespace ganglio\PDS\Bloom
+namespace ganglio\PDS\Bloom;
 
 class Bloom {
-
 }
