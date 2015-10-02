@@ -10,7 +10,7 @@ before_script:
 
 
 script:
-  - test/phpunit.phar -c test/phpunit.xml --coverage-clover=coverage.xml
+  - test/phpunit.phar --coverage-clover=coverage.xml
 
 before_install:
   - pip install --user codecov
