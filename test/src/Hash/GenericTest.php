@@ -2,7 +2,7 @@
 
 namespace PDSTest;
 
-class MurmurTest extends \PHPUnit_Framework_TestCase {
+class GenericTest extends \PHPUnit_Framework_TestCase {
 
 	protected $hash;
 
@@ -19,6 +19,13 @@ class MurmurTest extends \PHPUnit_Framework_TestCase {
 	 */
 	public function testWrongAlgorithm() {
 		$this->hash->setAlgorithm("MD44");
+	}
+
+	public function testGetAlgorithm() {
+		$this->assertEquals(
+			"md5",
+			$this->hash->getAlgorithm()
+		);
 	}
 
 	public function testHash() {

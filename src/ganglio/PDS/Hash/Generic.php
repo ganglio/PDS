@@ -16,6 +16,10 @@ class Generic implements Hash {
 		$this->alg = $alg;
 	}
 
+	public function getAlgorithm() {
+		return $this->alg;
+	}
+
 	public function hash($str) {
 		return hexdec(
 			substr(

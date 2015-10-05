@@ -22,6 +22,10 @@
 		<testsuite name="PDS testing Suite - Storage Structures">
 			<directory>./test/src/Storage</directory>
 		</testsuite>
+
+		<testsuite name="PDS testing Suite - Bloom Filter">
+			<directory>./test/src/Bloom</directory>
+		</testsuite>
 	</testsuites>
 
 	<filter>

@@ -55,20 +55,23 @@ class BitArrayTest extends \PHPUnit_Framework_TestCase {
 	 * @expectedException InvalidArgumentException
 	 */
 	public function testExceptionsSetNonNumericKey() {
-		$this->markTestIncomplete("Still TODO");
+		$this->storage->flush();
+		$this->storage->set("test");
 	}
 
 	/**
 	 * @expectedException InvalidArgumentException
 	 */
 	public function testExceptionsSetWithValue() {
-		$this->markTestIncomplete("Still TODO");
+		$this->storage->flush();
+		$this->storage->set(0x22,"test");
 	}
 
 	/**
 	 * @expectedException InvalidArgumentException
 	 */
 	public function testExceptionsGet() {
-		$this->markTestIncomplete("Still TODO");
+		$this->storage->flush();
+		$this->storage->get("test");
 	}
 }
