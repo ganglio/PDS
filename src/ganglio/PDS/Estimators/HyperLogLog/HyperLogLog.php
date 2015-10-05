@@ -87,5 +87,4 @@ class HyperLogLog implements Estimator
 
         return false;
     }
-
 }

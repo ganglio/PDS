@@ -37,8 +37,9 @@ class Pearson implements Hash
             }
             $hh[$j] = $h;
         }
-        foreach ($hh as $kk=>$vv)
+        foreach ($hh as $kk => $vv) {
             $hash += ($vv<<(8*$kk));
+        }
         return $hash & Hash::UPPERBOUND;
     }
 }

@@ -2,7 +2,8 @@
 
 namespace ganglio\PDS\Estimators;
 
-interface Estimator {
+interface Estimator
+{
     public function add($key);
     public function count();
 }

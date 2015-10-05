@@ -10,22 +10,25 @@ class MultiHash implements Hash
     {
         $args = func_get_args();
 
-        if (count($args)<2)
+        if (count($args)<2) {
             throw new \InvalidArgumentException("Please provide at least two hashing classes");
+        }
 
-        foreach ($args as $hash)
-            if ($hash instanceof Hash)
+        foreach ($args as $hash) {
+            if ($hash instanceof Hash) {
                 $this->hashes[] = $hash;
-            else
+            } else {
                 throw new \InvalidArgumentException("All parameters need to be hashing classes");
+            }
+        }
     }
 
     public function hash($str)
     {
         $out = [];
-        foreach ($this->hashes as $hash)
+        foreach ($this->hashes as $hash){
             $out[] = $hash->hash($str) & Hash::UPPERBOUND;
+        }
         return $out;
     }
-
 }

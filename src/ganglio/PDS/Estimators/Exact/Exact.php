@@ -27,5 +27,4 @@ class Exact implements Estimator
         $this->hash = null;
         unset($this->hash);
     }
-
 }

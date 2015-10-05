@@ -15,19 +15,23 @@ class Bloom
     {
         $args = func_get_args();
 
-        if (count($args)<2)
+        if (count($args)<2) {
             throw new \InvalidArgumentException("Please provide at least two hashing function names");
+        }
 
-        foreach ($args as $kk=>$arg)
-            if (!is_string($arg))
+        foreach ($args as $kk => $arg) {
+            if (!is_string($arg)) {
                 throw new \InvalidArgumentException("Please provide hashing function names as strings");
-            else
+            } else {
                 $args[$kk] = new Generic($arg);
+            }
+        }
 
         $this->storage = new BitArray();
 
         $hashReflection = new \ReflectionClass("\ganglio\PDS\Hash\MultiHash");
         $this->hash = $hashReflection->newInstanceArgs($args);
+
     }
 
     public function flush()
@@ -54,10 +58,10 @@ class Bloom
 
         $keys = $this->hash->hash($key);
 
-        foreach ($keys as $index)
+        foreach ($keys as $index) {
             $isThere &= $this->storage->get($index);
+        }
 
         return $isThere;
     }
-
 }
