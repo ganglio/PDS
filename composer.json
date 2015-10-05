@@ -14,13 +14,11 @@
     "autoload": {
         "psr-0": {
             "ganglio": "src",
-            "PDSTests": "test/src",
-            "Benchmarks": "benchmarks/src"
+            "PDSTests": "test/src"
         },
         "classmap" : [
             "src",
-            "test/src",
-            "benchmarks/src"
+            "test/src"
         ]
     },
     "require": {
