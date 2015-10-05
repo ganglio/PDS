@@ -6,50 +6,58 @@ use \ganglio\PDS\Storage\BitArray;
 use \ganglio\PDS\Hash\Generic;
 use \ganglio\PDS\Hash\MultiHash;
 
-class Bloom {
-	private $storage;
-	private $hash;
+class Bloom
+{
+    private $storage;
+    private $hash;
 
-	public function __construct() {
-		$args = func_get_args();
+    public function __construct()
+    {
+        $args = func_get_args();
 
-		if (count($args)<2)
-			throw new \InvalidArgumentException("Please provide at least two hashing function names");
+        if (count($args)<2)
+            throw new \InvalidArgumentException("Please provide at least two hashing function names");
 
-		foreach ($args as $kk=>$arg)
-			if (!is_string($arg))
-				throw new \InvalidArgumentException("Please provide hashing function names as strings");
-			else
-				$args[$kk] = new Generic($arg);
+        foreach ($args as $kk=>$arg)
+            if (!is_string($arg))
+                throw new \InvalidArgumentException("Please provide hashing function names as strings");
+            else
+                $args[$kk] = new Generic($arg);
 
-		$this->storage = new BitArray();
+        $this->storage = new BitArray();
 
-		$hashReflection = new \ReflectionClass("\ganglio\PDS\Hash\MultiHash");
-		$this->hash = $hashReflection->newInstanceArgs($args);
-	}
+        $hashReflection = new \ReflectionClass("\ganglio\PDS\Hash\MultiHash");
+        $this->hash = $hashReflection->newInstanceArgs($args);
+    }
 
-	public function flush() {
-		$this->storage->flush();
-	}
-	public function add($key) {
-		$isNew = true;
+    public function flush()
+    {
+        $this->storage->flush();
+    }
 
-		$keys = $this->hash->hash($key);
+    public function add($key)
+    {
+        $isNew = true;
 
-		foreach ($keys as $index) {
-			$isNew &= $this->storage->get($index);
-			$this->storage->set($index);
-		}
-		return $isNew;
-	}
-	public function test($key) {
-		$isThere = true;
+        $keys = $this->hash->hash($key);
 
-		$keys = $this->hash->hash($key);
+        foreach ($keys as $index) {
+            $isNew &= $this->storage->get($index);
+            $this->storage->set($index);
+        }
+        return $isNew;
+    }
 
-		foreach ($keys as $index)
-			$isThere &= $this->storage->get($index);
+    public function test($key)
+    {
+        $isThere = true;
 
-		return $isThere;
-	}
+        $keys = $this->hash->hash($key);
+
+        foreach ($keys as $index)
+            $isThere &= $this->storage->get($index);
+
+        return $isThere;
+    }
+
 }
