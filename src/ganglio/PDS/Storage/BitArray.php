@@ -31,7 +31,10 @@ class BitArray implements Storage {
 		$bucket = $key>>5;
 		$bit = $key & ((1<<5)-1);
 
-		return (bool)($this->store[$bucket] & (1<<$bit));
+		if (isset($this->store[$bucket]))
+			return (bool)($this->store[$bucket] & (1<<$bit));
+		else
+			return false;
 	}
 
 	public function flush() {
