@@ -32,5 +32,4 @@ class FNVHashTest extends \PHPUnit_Framework_TestCase
             $this->assertEquals(0, $this->hash->hash($string));
         }
     }
-
 }

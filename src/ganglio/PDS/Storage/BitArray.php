@@ -7,7 +7,7 @@ class BitArray implements Storage
     private $store = [];
     private $size = 0;
 
-    public function set($key, $value=null)
+    public function set($key, $value = null)
     {
         if (!is_null($value)) {
             throw new \InvalidArgumentException("BitArray only allows to set a key to TRUE");
