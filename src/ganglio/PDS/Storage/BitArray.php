@@ -10,11 +10,11 @@ class BitArray implements Storage
     public function set($key, $value = null)
     {
         if (!is_null($value)) {
-            throw new \InvalidArgumentException("BitArray only allows to set a key to TRUE");
+            throw new \InvalidArgumentException("BitArray only allows to set a key to TRUE", 1);
         }
 
         if (!is_numeric($key)) {
-            throw new \InvalidArgumentException("BitArray only allows numeric keys");
+            throw new \InvalidArgumentException("BitArray only allows numeric keys", 2);
         }
 
         $bucket = $key>>5;
@@ -34,7 +34,7 @@ class BitArray implements Storage
     public function get($key)
     {
         if (!is_numeric($key)) {
-            throw new \InvalidArgumentException("BitArray only allows numeric keys");
+            throw new \InvalidArgumentException("BitArray only allows numeric keys", 3);
         }
 
         $bucket = $key>>5;

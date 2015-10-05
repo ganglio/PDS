@@ -20,19 +20,22 @@ class MultiHashTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException InvalidArgumentException
+     * @expectedException    InvalidArgumentException
+     * expectedExceptionCode 2
      */
     public function testInvalidConstructorArguments()
     {
-        new \ganglio\PDS\Hash\MultiHash([1,2,3]);
+        new \ganglio\PDS\Hash\MultiHash(new Generic("md5"), [1,2,3]);
     }
 
     /**
-     * @expectedException InvalidArgumentException
+     * @expectedException     InvalidArgumentException
+     * @expectedExceptionCode 1
      */
     public function testInvalidConstructorArgumentsNumber()
     {
         new \ganglio\PDS\Hash\MultiHash(new Generic("md5"));
+
     }
 
     public function testHash()

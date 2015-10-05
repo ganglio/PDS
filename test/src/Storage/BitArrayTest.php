@@ -60,6 +60,7 @@ class BitArrayTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @expectedException InvalidArgumentException
+     * @expectedExceptionCode 2
      */
     public function testExceptionsSetNonNumericKey()
     {
@@ -69,6 +70,7 @@ class BitArrayTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @expectedException InvalidArgumentException
+     * @expectedExceptionCode 1
      */
     public function testExceptionsSetWithValue()
     {
@@ -78,6 +80,7 @@ class BitArrayTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @expectedException InvalidArgumentException
+     * @expectedExceptionCode 3
      */
     public function testExceptionsGet()
     {
