@@ -37,8 +37,9 @@ class BitArrayTest extends \PHPUnit_Framework_TestCase
         $this->storage->flush();
 
         $numElem = 50;
-        for ($i=0; $i<$numElem; $i++)
+        for ($i=0; $i<$numElem; $i++) {
             $this->storage->set(mt_rand());
+        }
 
         $this->assertLessThanOrEqual(
             $numElem,
@@ -72,7 +73,7 @@ class BitArrayTest extends \PHPUnit_Framework_TestCase
     public function testExceptionsSetWithValue()
     {
         $this->storage->flush();
-        $this->storage->set(0x22,"test");
+        $this->storage->set(0x22, "test");
     }
 
     /**

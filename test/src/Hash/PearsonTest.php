@@ -25,5 +25,4 @@ class PearsonTest extends \PHPUnit_Framework_TestCase
             $hash
         );
     }
-
 }

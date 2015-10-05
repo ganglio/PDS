@@ -22,7 +22,7 @@ class BloomTest extends \PHPUnit_Framework_TestCase
      */
     public function testInvalidConstructorArguments()
     {
-        new \ganglio\PDS\Bloom\Bloom([1,2,3],[4,5,6]);
+        new \ganglio\PDS\Bloom\Bloom([1,2,3], [4,5,6]);
     }
 
     /**

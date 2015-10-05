@@ -25,8 +25,9 @@ class ExactTest extends \PHPUnit_Framework_TestCase
         );
 
         $num_keys = 50000;
-        for ($i=0; $i<$num_keys; $i++)
-            $this->estimator->add("first".$i);
+        for ($i=0; $i<$num_keys; $i++) {
+            $this->estimator->add("first" . $i);
+        }
 
         $counted = $this->estimator->count();
 

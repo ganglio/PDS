@@ -28,8 +28,9 @@ class FNVHashTest extends \PHPUnit_Framework_TestCase
     public function testZero()
     {
         $tests = ["3d7A5K", "9q6Mq3", "HHYSLE", "TrLdZ1", "VL3BqC", "WAd2`W", "YUo19l", "Yf6hP6", "hIrjFj", "n`bv3R", "plIzl`", "uMk`9Q", "ysopHl", "zcIkCe"];
-        foreach ($tests as $string)
-            $this->assertEquals(0,$this->hash->hash($string));
+        foreach ($tests as $string) {
+            $this->assertEquals(0, $this->hash->hash($string));
+        }
     }
 
 }

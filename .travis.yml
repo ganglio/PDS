@@ -6,12 +6,11 @@ php:
 before_script:
   - composer self-update
   - composer install
+  - pip install --upgrade pip
+  - pip install --user codecov
 
 script:
   - ./vendor/bin/phpunit --coverage-clover=coverage.xml
-
-before_install:
-  - pip install --user codecov
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
