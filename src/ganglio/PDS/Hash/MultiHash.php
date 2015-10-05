@@ -26,7 +26,7 @@ class MultiHash implements Hash
     public function hash($str)
     {
         $out = [];
-        foreach ($this->hashes as $hash){
+        foreach ($this->hashes as $hash) {
             $out[] = $hash->hash($str) & Hash::UPPERBOUND;
         }
         return $out;

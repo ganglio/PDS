@@ -33,32 +33,36 @@ class HyperLogLog implements Estimator
 
     public function reset()
     {
-        for ($i=0; $i<$this->registers_size; $i++)
+        for ($i=0; $i<$this->registers_size; $i++) {
             $this->registers[$i] = 0;
+        }
     }
 
     public function count()
     {
 
-        if ($this->isEmpty)
+        if ($this->isEmpty) {
             return 0;
+        }
 
         $estimate = 0;
         $empty = 0;
 
-        for ($i=0; $i<$this->registers_size; $i++)
-            if ($this->registers[$i] != 0)
-                $estimate += (1.0/pow(2,$this->registers[$i]));
-            else {
+        for ($i=0; $i<$this->registers_size; $i++) {
+            if ($this->registers[$i] != 0) {
+                $estimate += (1.0/pow(2, $this->registers[$i]));
+            } else {
                 $estimate += 1.0;
                 $empty++;
             }
+        }
 
         $estimate = (1.0/$estimate) * $this->alpha * $this->registers_size * $this->registers_size;
 
         // Use LinearCounting for small cardinalities
-        if ($estimate < 2.5 * $this->registers_size && $empty!=0)
+        if ($estimate < 2.5 * $this->registers_size && $empty!=0) {
             $estimate = $this->registers_size * log($this->registers_size / $empty);
+        }
 
         return floor($estimate);
     }
